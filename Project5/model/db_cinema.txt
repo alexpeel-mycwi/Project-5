@@ -1,0 +1,103 @@
+/* Create and select database */
+DROP DATABASE IF EXISTS db_cinema;
+CREATE DATABASE db_cinema;
+USE db_cinema;
+
+/* Create table for employees */
+CREATE TABLE employees (
+  employeeID        INT(3)      NOT NULL AUTO_INCREMENT,
+  employeeFirstName VARCHAR(25) NOT NULL,
+  employeeLastName  VARCHAR(25) NOT NULL,
+  employeeTitle     VARCHAR(45),
+  employeeRoll      VARCHAR(15) NOT NULL,
+  PRIMARY KEY (employeeID)
+);
+
+/* Create table for contact page */
+CREATE TABLE contact (
+  customerID        INT(11)      NOT NULL   AUTO_INCREMENT,
+  customerFirstName VARCHAR(25)  NOT NULL,
+  customerLastName  VARCHAR(25)  NOT NULL,
+  customerEmail     VARCHAR(255) NOT NULL,
+  customerComments	VARCHAR(255) NOT NULL,
+  PRIMARY KEY (customerID)
+);
+
+/* Create table for newsletter page */
+CREATE TABLE newsletter (
+  customerID        INT(11)      NOT NULL   AUTO_INCREMENT,
+  customerFirstName VARCHAR(25)  NOT NULL,
+  customerLastName  VARCHAR(25)  NOT NULL,
+  customerEmail     VARCHAR(255) NOT NULL,
+  PRIMARY KEY (customerID)
+);
+
+/* Insert data into employee table */
+INSERT INTO employees (employeeID, employeeFirstName, employeeLastName, employeeTitle, employeeRoll) VALUES
+  (1, 'Sarah', 'Mathews', 'CEO', 'admin'),
+  (2, 'Kennedy', 'George', 'COO', 'admin'),
+  (3, 'Gina', 'Cowan', 'Manager', 'admin'),
+  (4, 'Brock', 'Smith', 'Manager', 'admin'),
+  (5, 'Marcus', 'Birdsell', 'Manager', 'admin'),
+  (6, 'Kimberly', 'Peterson', 'Staff', 'user'),
+  (7, 'David', 'Peckham', 'Staff', 'user'),
+  (8, 'Cody', 'Hendricks', 'Staff', 'user'),
+  (9, 'Kyle', 'Taylor', 'Staff', 'user'),
+  (10, 'Joshua', 'Breyer', 'Staff', 'user'),
+  (11, 'Mark', 'Holding', 'Staff', 'user'),
+  (12, 'Joel', 'Turner', 'Staff', 'user'),
+  (13, 'Shannon', 'Hale', 'Staff', 'user'),
+  (14, 'Haylee', 'Allen', 'Staff', 'user'),
+  (15, 'Mike', 'Fox', 'Staff', 'user'),
+  (16, 'Tristen', 'Combs', 'Staff', 'user'),
+  (17, 'Joshua', 'Frankovich', 'Staff', 'user'),
+  (18, 'April', 'Bingham', 'Staff', 'user'),
+  (19, 'Elizabeth', 'Holt', 'Staff', 'user'),
+  (20, 'Allen', 'Lampkey', 'Staff', 'user');
+
+/* Insert data into contact table */
+INSERT INTO contact (customerID, customerFirstName, customerLastName, customerEmail, customerComments)
+VALUES
+  (1, 'Amanda', 'Bennet', 'amandabennet@gmail.com', 'Love this site'),
+  (2, 'Andy', 'Olmstead', 'andyolmstead@gmail.com', 'Great site'),
+  (3, 'Austin', 'Johnson', 'austinjohnson@gmail.com', 'Needs work'),
+  (4, 'Brandon', 'Whitlock', 'brandonwhitlock@gmail.com', 'I'm recommending this site to everyone'),
+  (5, 'Brayley', 'Webster', 'brayleywebster@gmail.com', 'Meh'),
+  (6, 'Brian', 'Morris', 'brianmorris@gmail.com', 'Good job'),
+  (7, 'Brooke', 'Cerio', 'brookecerio@gmail.com', 'How can I find my tickets'),
+  (8, 'Caleb', 'Wells', 'calebwells@gmail.com', 'Are you hiring'),
+  (9, 'Chris', 'Baker', 'chrisbaker@gmail.com', 'What'),
+  (10, 'Crystal', 'Copenhaver', 'crystalcopenhaver@gmail.com', 'LOL'),
+  (11, 'David', 'Mara', 'davidmara@gmail.com', 'Your site is okay'),
+  (12, 'David', 'Phillips', 'davidphillips@gmail.com', 'Who runs this site'),
+  (13, 'Evie', 'Wellings', 'eviewellings@gmail.com', 'Amazing'),
+  (14, 'Herb', 'Holley', 'herbholley@gmail.com', 'Superb'),
+  (15, 'Holly', 'Holm', 'hollyholm@gmail.com', 'It is okay'),
+  (16, 'Isaac', 'Martinez', 'isaacmartinez@gmail.com', 'Fair enough'),
+  (17, 'Israel', 'Ayola', 'israelayola@gmail.com', 'Excellente'),
+  (18, 'Jake', 'Anderson', 'jakeanderson@gmail.com', 'Pretty standard'),
+  (19, 'Jerath', 'Hansen', 'jerathhansen@gmail.com', 'This site is great'),
+  (20, 'Jesse', 'Collord', 'jessecollord@gmail.com', 'My whole family loves this site');
+
+/* Insert data into newsletter table */
+INSERT INTO newsletter (customerID, customerFirstName, customerLastName, customerEmail) VALUES
+  (1, 'Amanda', 'Bennet', 'amandabennet@gmail.com'),
+  (2, 'Andy', 'Olmstead', 'andyolmstead@gmail.com'),
+  (3, 'Austin', 'Johnson', 'austinjohnson@gmail.com'),
+  (4, 'Brandon', 'Whitlock', 'brandonwhitlock@gmail.com'),
+  (5, 'Brayley', 'Webster', 'brayleywebster@gmail.com'),
+  (6, 'Brian', 'Morris', 'brianmorris@gmail.com'),
+  (7, 'Brooke', 'Cerio', 'brookecerio@gmail.com'),
+  (8, 'Caleb', 'Wells', 'calebwells@gmail.com'),
+  (9, 'Chris', 'Baker', 'chrisbaker@gmail.com'),
+  (10, 'Crystal', 'Copenhaver', 'crystalcopenhaver@gmail.com'),
+  (11, 'David', 'Mara', 'davidmara@gmail.com'),
+  (12, 'David', 'Phillips', 'davidphillips@gmail.com'),
+  (13, 'Evie', 'Wellings', 'eviewellings@gmail.com'),
+  (14, 'Herb', 'Holley', 'herbholley@gmail.com'),
+  (15, 'Holly', 'Holm', 'hollyholm@gmail.com'),
+  (16, 'Isaac', 'Martinez', 'isaacmartinez@gmail.com'),
+  (17, 'Israel', 'Ayola', 'israelayola@gmail.com'),
+  (18, 'Jake', 'Anderson', 'jakeanderson@gmail.com'),
+  (19, 'Jerath', 'Hansen', 'jerathhansen@gmail.com'),
+  (20, 'Jesse', 'Collord', 'jessecollord@gmail.com');
